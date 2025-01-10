@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADVENTURE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text color */
+        }
+    
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    
+        h2.text-center {
+            text-align: center;
+            color: #ffd000; /* Yellow color for the heading */
+            margin-bottom: 30px;
+        }
+    
+        /* Card Layout */
+        .row {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 10px;
+        }
+    
+        .card {
+            border: 1px solid #333; /* Darker border for cards */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow */
+            background-color: #1e1e1e; /* Dark card background */
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Darker shadow on hover */
+        }
+    
+        /* Card Image */
+        .landscape-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid #333; /* Darker border for the image */
+        }
+    
+        /* Card Body */
+        .card-body {
+            flex: 1;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    
+        .card-body h5 {
+            font-size: 1.25rem;
+            color: #e0e0e0; /* Light text color */
+            margin-bottom: 10px;
+        }
+    
+        .card-body p {
+            font-size: 0.9rem;
+            color: #b0b0b0; /* Slightly lighter text color for paragraphs */
+            margin-bottom: 15px;
+        }
+    
+        .card-body .price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffd000; /* Yellow color for price */
+            margin-bottom: 15px;
+        }
+    
+        /* Button Styles */
+        .btn-add-to-cart {
+            background-color: #ffd000; /* Yellow button */
+            color: #121212; /* Dark text for button */
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+    
+        .btn-add-to-cart:hover {
+            background-color: #e6c200; /* Darker yellow on hover */
+        }
+    
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .row {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+    
+            .landscape-img {
+                height: 180px;
+            }
+    
+            .card-body h5 {
+                font-size: 1.1rem;
+            }
+    
+            .card-body p {
+                font-size: 0.85rem;
+            }
+    
+            .btn-add-to-cart {
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .row {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+    
+            .landscape-img {
+                height: 150px;
+            }
+    
+            .card-body h5 {
+                font-size: 1rem;
+            }
+    
+            .card-body p {
+                font-size: 0.8rem;
+            }
+    
+            .btn-add-to-cart {
+                font-size: 0.85rem;
+                padding: 6px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body
+    onload='if (window.location.href.substr(window.location.href.length - 6) == "#about") { introAboutLogoTransition(); }'>
+    <!--navbar-->
+    <nav class="navbar glass" style="height: 70px">
+        <span>
+            <a href="./index.html" style="display: flex; align-items: center">
+                <img class="img2" src="./img/mountain.png" width="40" style="margin: -25px -10px -25px -20px" />
+                <h1 class="logo">&nbsp;ADVENTURE</h1>
+            </a>
+        </span>
+        <ul class="nav-links">
+            <li>
+                <a href="./index.html" id="pri" class="cir_border">Home</a>
+            </li>
+            <li>
+                <a href="./services.html" id="sec" class=" cir_border">Services</a>
+            </li>
+            <li>
+                <a href="./places.html" id="thi" class=" cir_border">Places</a>
+            </li>
+            <li>
+                <a href="./adventure.html" id="thi" class="active cir_border">Adventures</a>
+            </li>
+           
+        </ul>
+        <img src="./img/menu-btn.png" alt="" class="menu-btn" />
+    </nav>
+    <!--navbar-->
+
+    <div class="container" style="padding-top: 5rem;">
+        <h2 class="text-center mb-5" style="color: #ffd000;">Nepal Adventures: Explore the Himalayas and Beyond</h2>
+
+        <div class="row">
+            <!-- Adventure 1: Everest Base Camp Trek -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="everest_base_camp.jpg" alt="Everest Base Camp Trek">
+                    <div class="card-body">
+                        <h5>Everest Base Camp Trek</h5>
+                        <p>Trek to the base camp of Mount Everest and experience the majestic Himalayas.</p>
+                        <div class="price">$950</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 2: Annapurna Circuit Trek -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="annapurna_circuit.jpg" alt="Annapurna Circuit Trek">
+                    <div class="card-body">
+                        <h5>Annapurna Circuit Trek</h5>
+                        <p>Explore the diverse landscapes around the Annapurna Massif.</p>
+                        <div class="price">$800</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 3: Langtang Valley Trek -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="langtang_valley.jpg" alt="Langtang Valley Trek">
+                    <div class="card-body">
+                        <h5>Langtang Valley Trek</h5>
+                        <p>Discover the scenic Langtang Valley and its Tibetan culture.</p>
+                        <div class="price">$700</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 4: Manaslu Circuit Trek -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="manaslu_circuit.jpg" alt="Manaslu Circuit Trek">
+                    <div class="card-body">
+                        <h5>Manaslu Circuit Trek</h5>
+                        <p>Trek around the eighth highest mountain in the world.</p>
+                        <div class="price">$850</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 5: Ghorepani Poon Hill Trek -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="ghorepani_poon_hill.jpg" alt="Ghorepani Poon Hill Trek">
+                    <div class="card-body">
+                        <h5>Ghorepani Poon Hill Trek</h5>
+                        <p>Enjoy stunning sunrise views from Poon Hill.</p>
+                        <div class="price">$600</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 6: Makalu Base Camp Trek -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="makalu_base_camp.jpg" alt="Makalu Base Camp Trek">
+                    <div class="card-body">
+                        <h5>Makalu Base Camp Trek</h5>
+                        <p>Trek to the base camp of Makalu, the fifth highest mountain.</p>
+                        <div class="price">$900</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 7: Everest Expedition (Summit) -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="everest_expedition.jpg" alt="Everest Expedition (Summit)">
+                    <div class="card-body">
+                        <h5>Everest Expedition (Summit)</h5>
+                        <p>Climb to the summit of Mount Everest, the highest peak on Earth.</p>
+                        <div class="price">$35,000</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 8: Kangchenjunga Expedition -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="kangchenjunga.jpg" alt="Kangchenjunga Expedition">
+                    <div class="card-body">
+                        <h5>Kangchenjunga Expedition</h5>
+                        <p>Tackle the third highest mountain in the world.</p>
+                        <div class="price">$25,000</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 9: Manaslu Expedition -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="manaslu_expedition.jpg" alt="Manaslu Expedition">
+                    <div class="card-body">
+                        <h5>Manaslu Expedition</h5>
+                        <p>Climb the eighth highest mountain in the world.</p>
+                        <div class="price">$20,000</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 10: Dhaulagiri Expedition -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="dhaulagiri.jpg" alt="Dhaulagiri Expedition">
+                    <div class="card-body">
+                        <h5>Dhaulagiri Expedition</h5>
+                        <p>Conquer the seventh highest peak in the world.</p>
+                        <div class="price">$18,000</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 11: Makalu Expedition -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="makalu_expedition.jpg" alt="Makalu Expedition">
+                    <div class="card-body">
+                        <h5>Makalu Expedition</h5>
+                        <p>Tackle the fifth highest mountain in the world.</p>
+                        <div class="price">$22,000</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 12: Chitwan National Park -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="chitwan_national_park.jpg" alt="Chitwan National Park">
+                    <div class="card-body">
+                        <h5>Chitwan National Park</h5>
+                        <p>Experience a jungle safari and see wildlife in southern Nepal.</p>
+                        <div class="price">$250</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 13: Bardia National Park -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="bardia_national_park.jpg" alt="Bardia National Park">
+                    <div class="card-body">
+                        <h5>Bardia National Park</h5>
+                        <p>Explore the wilderness and wildlife in western Nepal.</p>
+                        <div class="price">$300</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 14: Shivapuri National Park -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="shivapuri_national_park.jpg" alt="Shivapuri National Park">
+                    <div class="card-body">
+                        <h5>Shivapuri National Park</h5>
+                        <p>Hike and explore the forests and waterfalls near Kathmandu.</p>
+                        <div class="price">$150</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 15: Trishuli River Rafting -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="trishuli_rafting.jpg" alt="Trishuli River Rafting">
+                    <div class="card-body">
+                        <h5>Trishuli River Rafting</h5>
+                        <p>Enjoy thrilling rafting on the Trishuli River.</p>
+                        <div class="price">$150</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 16: Seti River Rafting -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="seti_rafting.jpg" alt="Seti River Rafting">
+                    <div class="card-body">
+                        <h5>Seti River Rafting</h5>
+                        <p>Experience the adrenaline of rafting on the Seti River.</p>
+                        <div class="price">$180</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 17: Kali Gandaki River Rafting -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="kali_gandaki_rafting.jpg" alt="Kali Gandaki River Rafting">
+                    <div class="card-body">
+                        <h5>Kali Gandaki River Rafting</h5>
+                        <p>Navigate the challenging rapids of the Kali Gandaki.</p>
+                        <div class="price">$200</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 18: Bhote Koshi River Rafting -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="bhote_koshi_rafting.jpg" alt="Bhote Koshi River Rafting">
+                    <div class="card-body">
+                        <h5>Bhote Koshi River Rafting</h5>
+                        <p>Enjoy rafting in the eastern Himalayas.</p>
+                        <div class="price">$220</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 19: Pokhara Paragliding -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="paragliding_pokhara.jpg" alt="Pokhara Paragliding">
+                    <div class="card-body">
+                        <h5>Pokhara Paragliding</h5>
+                        <p>Soar above the stunning lakes and mountains of Pokhara.</p>
+                        <div class="price">$200</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 20: Sarangkot Paragliding -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="sarangkot_paragliding.jpg" alt="Sarangkot Paragliding">
+                    <div class="card-body">
+                        <h5>Sarangkot Paragliding</h5>
+                        <p>Experience the thrill of paragliding over the Annapurna Range.</p>
+                        <div class="price">$250</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 21: Kathmandu Valley Cycling Tour -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="cycling_tour.jpg" alt="Kathmandu Valley Cycling Tour">
+                    <div class="card-body">
+                        <h5>Kathmandu Valley Cycling Tour</h5>
+                        <p>Explore the cultural heritage on a cycling tour.</p>
+                        <div class="price">$100</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 22: Annapurna Circuit Mountain Biking -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="annapurna_biking.jpg" alt="Annapurna Circuit Mountain Biking">
+                    <div class="card-body">
+                        <h5>Annapurna Circuit Mountain Biking</h5>
+                        <p>Pedal through the scenic trails of the Annapurna Circuit.</p>
+                        <div class="price">$750</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 23: Pokhara to Jomsom Bike Ride -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="pokhara_jomsom_bike.jpg" alt="Pokhara to Jomsom Bike Ride">
+                    <div class="card-body">
+                        <h5>Pokhara to Jomsom Bike Ride</h5>
+                        <p>Cycle from Pokhara to Jomsom, exploring the Mustang region.</p>
+                        <div class="price">$800</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 24: Buddhist Pilgrimage Tour -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="buddhist_pilgrimage.jpg" alt="Buddhist Pilgrimage Tour">
+                    <div class="card-body">
+                        <h5>Buddhist Pilgrimage Tour</h5>
+                        <p>Visit sacred Buddhist sites across Nepal.</p>
+                        <div class="price">$300</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 25: Visit to Kathmandu Valley’s UNESCO Sites -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="unesco_sites.jpg" alt="Visit to Kathmandu Valley’s UNESCO Sites">
+                    <div class="card-body">
+                        <h5>Visit to Kathmandu Valley’s UNESCO Sites</h5>
+                        <p>Explore the cultural heritage of the Kathmandu Valley.</p>
+                        <div class="price">$150</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 26: Muktinath Pilgrimage -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="muktinath_pilgrimage.jpg" alt="Muktinath Pilgrimage">
+                    <div class="card-body">
+                        <h5>Muktinath Pilgrimage</h5>
+                        <p>Visit the sacred site of Muktinath, revered by Hindus and Buddhists.</p>
+                        <div class="price">$200</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 27: Rara Lake -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="rara_lake.jpg" alt="Rara Lake">
+                    <div class="card-body">
+                        <h5>Rara Lake</h5>
+                        <p>Visit the beautiful Rara Lake in western Nepal.</p>
+                        <div class="price">$450</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 28: Barun Valley -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="barun_valley.jpg" alt="Barun Valley">
+                    <div class="card-body">
+                        <h5>Barun Valley</h5>
+                        <p>Explore the pristine Barun Valley and its rich biodiversity.</p>
+                        <div class="price">$700</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 29: Sagarmatha National Park -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="sagarmatha_park.jpg" alt="Sagarmatha National Park">
+                    <div class="card-body">
+                        <h5>Sagarmatha National Park</h5>
+                        <p>Trek through the home of Mount Everest in this UNESCO World Heritage site.</p>
+                        <div class="price">$850</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 30: Gupteshwor Cave Exploration -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="gupteshwor_cave.jpg" alt="Gupteshwor Cave Exploration">
+                    <div class="card-body">
+                        <h5>Gupteshwor Cave Exploration</h5>
+                        <p>Explore the mystical Gupteshwor Cave near Pokhara.</p>
+                        <div class="price">$120</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 31: Bat Cave Exploration -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="bat_cave.jpg" alt="Bat Cave Exploration">
+                    <div class="card-body">
+                        <h5>Bat Cave Exploration</h5>
+                        <p>Discover the fascinating Bat Cave near Pokhara.</p>
+                        <div class="price">$100</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 32: Siddha Gufa Cave Exploration -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="siddha_gufa.jpg" alt="Siddha Gufa Cave Exploration">
+                    <div class="card-body">
+                        <h5>Siddha Gufa Cave Exploration</h5>
+                        <p>Explore the sacred Siddha Gufa Cave.</p>
+                        <div class="price">$150</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 33: Boulder Climbing in Kathmandu Valley -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="bouldering_kathmandu.jpg" alt="Boulder Climbing in Kathmandu Valley">
+                    <div class="card-body">
+                        <h5>Boulder Climbing in Kathmandu Valley</h5>
+                        <p>Challenge yourself with bouldering in the Kathmandu Valley.</p>
+                        <div class="price">$150</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 34: Climbing in Hattiban and Nagarjun Forest -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="climbing_hattiban.jpg" alt="Climbing in Hattiban and Nagarjun Forest">
+                    <div class="card-body">
+                        <h5>Climbing in Hattiban and Nagarjun Forest</h5>
+                        <p>Experience rock climbing in the scenic Hattiban and Nagarjun Forest.</p>
+                        <div class="price">$180</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 35: Pokhara Zip-lining -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="zip_lining_pokhara.jpg" alt="Pokhara Zip-lining">
+                    <div class="card-body">
+                        <h5>Pokhara Zip-lining</h5>
+                        <p>Fly through the skies above Pokhara on a zip-line adventure.</p>
+                        <div class="price">$120</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 36: Sarangkot Zip-lining -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="zip_lining_sarangkot.jpg" alt="Sarangkot Zip-lining">
+                    <div class="card-body">
+                        <h5>Sarangkot Zip-lining</h5>
+                        <p>Enjoy zip-lining with views of the Annapurna Range.</p>
+                        <div class="price">$150</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 37: Mount Everest Skydiving -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="skydiving_everest.jpg" alt="Mount Everest Skydiving">
+                    <div class="card-body">
+                        <h5>Mount Everest Skydiving</h5>
+                        <p>Experience the thrill of skydiving over Mount Everest.</p>
+                        <div class="price">$1,500</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 38: Pokhara Skydiving -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="skydiving_pokhara.jpg" alt="Pokhara Skydiving">
+                    <div class="card-body">
+                        <h5>Pokhara Skydiving</h5>
+                        <p>Soar above the beautiful city of Pokhara.</p>
+                        <div class="price">$1,200</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure 39: Community Volunteering in Rural Nepal -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="landscape-img" src="volunteering_rural.jpg" alt="Community Volunteering in Rural Nepal">
+                    <div class="card-body">
+                        <h5>Community Volunteering in Rural Nepal</h5>
+                        <p>Contribute to community development projects in rural areas.</p>
+                        <div class="price">$500</div>
+                        <button class="btn-add-to-cart">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -933,5 +933,43 @@ input[type="radio"] {
 #item-3:checked ~ .player #test {
   transform: translateY(-80px);
 }
-
 /* end */
+
+
+/* Basic styles for the dropdown */
+.nav-links .dropdown {
+  position: relative;
+}
+
+.nav-links .dropdown-menu {
+  display: none;  /* Hide the dropdown by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nav-links .dropdown-menu li {
+  padding: 10px 20px;
+}
+
+.nav-links .dropdown-menu li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+/* Hover effect to display the dropdown */
+.nav-links .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.nav-links .dropdown-menu li a:hover {
+  background-color: #ffd000;
+  color: white;
+}
