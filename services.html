@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADVENTURE</title>
+    <!-- <link rel="stylesheet" href=" 	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> -->
+
+    <!-- <link rel="stylesheet" href=" 	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+</head>
+
+<body
+    onload='if (window.location.href.substr(window.location.href.length - 6) == "#about") { introAboutLogoTransition(); }'>
+    <!--navbar-->
+    <nav class="navbar glass" style="height: 70px">
+        <span>
+            <a href="./index.html" style="display: flex; align-items: center">
+                <img class="img2" src="./img/mountain.png" width="40" style="margin: -25px -10px -25px -20px" />
+                <h1 class="logo">&nbsp;ADVENTURE</h1>
+            </a>
+        </span>
+        <ul class="nav-links">
+            <li>
+                <a href="./index.html" id="pri" class="cir_border">Home</a>
+            </li>
+            <li>
+                <a href="./services.html" id="sec" class=" cir_border">Services</a>
+            </li>
+            <li>
+                <a href="./places.html" id="thi" class="active cir_border">Places</a>
+            </li>
+            <li>
+                <a href="./adventure.html" id="thi" class=" cir_border">Adventure</a>
+            </li>
+        </ul>
+        <img src="./img/menu-btn.png" alt="" class="menu-btn" />
+    </nav>
+
+    <section class="services" id="services" style="padding: 50px 0;">
+        <div class="container">
+            <div class="main-txt" style="text-align: center; font-size: 48px; font-weight: bold;">
+                <h1><span style="color:#ffd000;">S</span>ervices</h1>
+            </div>
+            <div class="row" style="margin-top: 30px; display: flex; justify-content: space-between;">
+                <!-- Start of Card -->
+                <div class="col-md-4 py-3 py-md-0" style="display: flex; justify-content: center;">
+                    <div class="card"
+                        style="border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden; height: 350px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s;">
+                        <i class="fas fa-hotel"
+                            style="font-size: 60px; color: #ffd000;display: block; text-align: center; padding: 20px;"></i>
+                        <div class="card-body text-center" style="padding: 20px; text-align: justify;">
+                            <h3 style="font-size: 24px; font-weight: bold; margin-bottom: 10px;">Affordable Hotel</h3>
+                            <p style="font-size: 16px; color: #666;">Nepal offers a wide range of accommodation, from luxury hotels to budget-friendly options in both urban areas and remote trekking locations. Stay in beautiful resorts in Pokhara or experience mountain lodges in the Annapurna region.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Card -->
+    
+                <!-- Start of Card -->
+                <div class="col-md-4 py-3 py-md-0" style="display: flex; justify-content: center;">
+                    <div class="card"
+                        style="border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden; height: 350px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s;">
+                        <i class="fas fa-utensils"
+                            style="font-size: 60px; color: #ffd000;display: block; text-align: center; padding: 20px;"></i>
+                        <div class="card-body text-center" style="padding: 20px; text-align: justify;">
+                            <h3 style="font-size: 24px; font-weight: bold; margin-bottom: 10px;">Food And Drinks</h3>
+                            <p style="font-size: 16px; color: #666;">Nepal’s cuisine offers diverse flavors with influences from Indian, Tibetan, and traditional Nepali ingredients. Enjoy momos, dal bhat, or sample local delicacies while on trekking routes and in city restaurants.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Card -->
+    
+                <!-- Start of Card -->
+                <div class="col-md-4 py-3 py-md-0" style="display: flex; justify-content: center;">
+                    <div class="card"
+                        style="border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden; height: 350px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s;">
+                        <i class="fas fa-bullhorn"
+                            style="font-size: 60px; color: #ffd000;display: block; text-align: center; padding: 20px;"></i>
+                        <div class="card-body text-center" style="padding: 20px; text-align: justify;">
+                            <h3 style="font-size: 24px; font-weight: bold; margin-bottom: 10px;">Safety Guide</h3>
+                            <p style="font-size: 16px; color: #666;">Trekking and traveling in Nepal requires some preparation. Be sure to rely on experienced guides who can help navigate the rugged terrain and ensure safety, especially in high-altitude regions like Everest and Annapurna.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Card -->
+            </div>
+    
+            <!-- Second Row of Cards -->
+            <div class="row" style="margin-top: 30px; display: flex; justify-content: space-between;">
+                <!-- Start of Card -->
+                <div class="col-md-4 py-3 py-md-0" style="display: flex; justify-content: center;">
+                    <div class="card"
+                        style="border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden; height: 350px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s;">
+                        <i class="fas fa-globe-asia"
+                            style="font-size: 60px; color: #ffd000;display: block; text-align: center; padding: 20px;"></i>
+                        <div class="card-body text-center" style="padding: 20px; text-align: justify;">
+                            <h3 style="font-size: 24px; font-weight: bold; margin-bottom: 10px;">Around The World</h3>
+                            <p style="font-size: 16px; color: #666;">Nepal is a gateway to some of the most stunning natural landscapes in the world. Whether you visit the Himalayan mountains, the peaceful lakes in Pokhara, or the cultural heart of Kathmandu, every corner of Nepal has something amazing to offer.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Card -->
+    
+                <!-- Start of Card -->
+                <div class="col-md-4 py-3 py-md-0" style="display: flex; justify-content: center;">
+                    <div class="card"
+                        style="border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden; height: 350px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s;">
+                        <i class="fas fa-plane"
+                            style="font-size: 60px; color: #ffd000;display: block; text-align: center; padding: 20px;"></i>
+                        <div class="card-body text-center" style="padding: 20px; text-align: justify;">
+                            <h3 style="font-size: 24px; font-weight: bold; margin-bottom: 10px;">Fastest Travel</h3>
+                            <p style="font-size: 16px; color: #666;">Nepal’s tourism infrastructure allows easy access to even remote areas through domestic flights. From Kathmandu, you can fly to places like Lukla, Pokhara, and more, ensuring quicker access to trekking routes and major tourist spots.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Card -->
+    
+                <!-- Start of Card -->
+                <div class="col-md-4 py-3 py-md-0" style="display: flex; justify-content: center;">
+                    <div class="card"
+                        style="border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden; height: 350px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s;">
+                        <i class="fas fa-hiking"
+                            style="font-size: 60px; color: #ffd000;display: block; text-align: center; padding: 20px;"></i>
+                        <div class="card-body text-center" style="padding: 20px; text-align: justify;">
+                            <h3 style="font-size: 24px; font-weight: bold; margin-bottom: 10px;">Adventures</h3>
+                            <p style="font-size: 16px; color: #666;">Nepal is renowned for its trekking adventures, from the Everest region to the Annapurna Circuit. Whether you are looking for a challenging trek or a scenic hike, Nepal’s trails offer adventure for all levels of outdoor enthusiasts.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Card -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Add a hover effect for the cards -->
+    <style>
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+    </style>
+
+    <!--footer-->
+    <section class="footer">
+        <div style="display: flex; justify-content: center; align-items: center; ">Created with love | &#169; <div id="current-date" style="padding: 10px;"> </div>  All rights reserved.</div>
+
+        <script>
+            const currentYear = new Date().getFullYear();
+            document.getElementById("current-date").textContent = currentYear;
+        </script>
+
+        <div class="social">
+            <li>
+                <a href="#facebook" target="_blank" rel="noreferrer"><i class="fa fa-globe"></i></a>
+                <a href="#github" target="_blank" rel="noreferrer"><i class="fa fa-github"></i></a>
+                <a href="linkedin" target="_blank" rel="noreferrer"><i class="fa fa-linkedin-square"></i></a>
+            </li>
+        </div>
+    </section>
+    <!--footer-->
+
+    <script>
+        const menuBtn = document.querySelector(".menu-btn");
+        const navlinks = document.querySelector(".nav-links");
+
+        menuBtn.addEventListener("click", () => {
+            navlinks.classList.toggle("mobile-menu");
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
